@@ -1,0 +1,69 @@
+# ---------------------------------------------------------------------------
+# Dynamic-Slot warehouses (DYNSLOT-WAREHOUSE)
+# ---------------------------------------------------------------------------
+# Configures DCS Dynamic Slots per coalition. The build applies this to the
+# mission's `warehouses`: it enables `dynamicSpawn` on the selected airbases,
+# sets fuel / munitions / aircraft stock, and links each offered aircraft type
+# to its dynamic-spawn template group via `linkDynTempl`. Runs AFTER aircraft
+# injection so the template groups (and their ids) already exist.
+#
+# DEFAULT (below): every airbase assigned to a coalition (e.g. via the MCP
+# `set_airbase_coalition`, or set in the Mission Editor) gets Dynamic Slots
+# enabled, a hot start offered, unlimited fuel/munitions, and its warehouse
+# auto-filled with every dynamic-spawn template of that coalition. With no
+# assigned airbase, this changes nothing.
+#
+# The same applies to that coalition's SHIPS and FARPs, which DCS keeps in a
+# separate warehouse table and which offer dynamic slots too. Each object is
+# stocked with what it can actually take: an aircraft carrier gets planes and
+# helicopters, a helicopter-capable ship or a FARP gets helicopters, and a ship
+# with no flight deck (a tanker, a cargo ship) is left alone.
+#
+# Customize:
+# - Add `aircrafts:` under a coalition's `defaults:` to offer a specific list
+#   instead of auto-filling. Each entry: `{ amount: unlimited | <n>, template?: "<name>" }`;
+#   omit `template` to auto-match a template group of the same aircraft type.
+# - Add an `airports:` map to target specific bases (by name on installed
+#   theatres, or by numeric id) instead of all airbases of the coalition:
+#     airports:
+#       Senaki-Kolkhi: {}
+#       24: { aircrafts: { Yak-52: { amount: 10 } } }
+# - Add `ships:` and/or `farps:` the same way, keyed by the object's unit name
+#   (as written in the Mission Editor) or by its unit id:
+#     ships:
+#       CSG-74 Stennis: {}
+#     farps:
+#       FARP Kaspi MM54: { aircrafts: { UH-1H: { amount: 20 } } }
+#   The three keys are independent: naming a ship says nothing about the FARPs,
+#   which keep the "all of this coalition" default.
+# - Add `exclude_airports:` (a list of names or ids) to keep some bases of the
+#   coalition WITHOUT dynamic slots whatever the default or the list says. This
+#   is what the MCP `set_airbase_coalition(..., dynamic_spawn: false)` writes:
+#     exclude_airports:
+#       - Kobuleti
+# - Add `hot_start: false` under a coalition's `defaults:` to offer cold starts
+#   only (DCS's own default; the build offers a hot start unless told otherwise).
+# - Remove a coalition block to leave that side's warehouses untouched.
+# ---------------------------------------------------------------------------
+
+blue:
+  defaults:
+    fuel: unlimited
+    weapons: unlimited
+
+  exclude_airports:
+    - Haifa
+    - Megiddo
+    - Kiryat Shmona
+    - Eyn Shemer
+red:
+  defaults:
+    fuel: unlimited
+    weapons: unlimited
+  exclude_airports:
+    - Mezzeh
+    - Khalkhalah
+    - Damascus
+    - Marj Ruhayyil
+    - Qabr as Sitt
+    - Al-Dumayr

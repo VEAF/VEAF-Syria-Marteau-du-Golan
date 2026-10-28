@@ -1,0 +1,25 @@
+# Spawnable aircraft groups for this mission.
+#
+# THIS FILE IS EMPTY ON PURPOSE, AND EMPTY DOES NOT MEAN "NONE".
+# Empty means "I add nothing to the catalogue shipped with veaf-tools". The build falls back to
+# that catalogue whenever this file holds no group, so an empty file gets you every entry the
+# tool ships with — and gets the new ones every time you update the tool.
+#
+# To switch the step off entirely, say so in mission.yaml instead:
+#
+#   pipeline:
+#     spawnable_aircrafts: false
+#
+# As soon as you write one group of your own below, this file stands alone: the shipped
+# catalogue is no longer read, and you keep exactly what is written here. To see what the
+# shipped catalogue has that you do not, and to copy in the entries you want:
+#
+#   .\veaf-tools.exe content pull-aircraft-groups
+#   .\veaf-tools.exe content pull-aircraft-groups --add "F-14BU Template"
+#   .\veaf-tools.exe content pull-aircraft-groups --add-new
+#
+# Doc: https://veaf.github.io/documentation/dev/mission-maker/concepts/dynamic-slots/
+airplanes:
+  coalitions: {}
+helicopters:
+  coalitions: {}

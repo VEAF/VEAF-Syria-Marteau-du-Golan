@@ -1,0 +1,240 @@
+# VEAF Waypoints Configuration Example
+# This file defines waypoints and flight plan settings for DCS missions
+#
+# STRUCTURE:
+# 1. waypoints: Define individual waypoints (position, altitude, speed, etc.)
+# 2. settings: Define flight plan templates that use those waypoints
+#
+# A waypoint has a KEY (HOLDING_POINT below) and a `name:`. Plans refer to it by its key; the cockpit shows
+# its `name:`, or its key when it has none. Two waypoints may share a name — POTI at 10 000 ft for the planes
+# and POTI_LOW at 500 ft for the helicopters, both shown as POTI — but never a key.
+
+# Define individual waypoints
+# These are the building blocks that will be assembled into flight plans
+waypoints:
+# Define flight plan settings
+# These determine which waypoints are injected into which aircraft groups
+# Matching criteria (all optional): category, coalition, type, country
+# If no criteria are specified, the plan applies to all groups
+  JETS_PUSH:
+    type: Turning Point
+    action: Turning Point
+    alt: 68
+    alt_type: BARO
+    x: -228000
+    y: -30000
+    name: PUSH
+  JETS_TELLHARA:
+    type: Turning Point
+    action: Turning Point
+    alt: 827
+    alt_type: BARO
+    x: -217882
+    y: 3524
+    name: TELLHARA
+  JETS_KHAN:
+    type: Turning Point
+    action: Turning Point
+    alt: 938
+    alt_type: BARO
+    x: -203930
+    y: -7802
+    name: KHAN
+  JETS_COLONNE:
+    type: Turning Point
+    action: Turning Point
+    alt: 898
+    alt_type: BARO
+    x: -193800
+    y: 3500
+    name: COLONNE
+  JETS_KANAKER:
+    type: Turning Point
+    action: Turning Point
+    alt: 804
+    alt_type: BARO
+    x: -196500
+    y: 12500
+    name: KANAKER
+  JETS_SASA:
+    type: Turning Point
+    action: Turning Point
+    alt: 867
+    alt_type: BARO
+    x: -192000
+    y: 7500
+    name: SASA
+  JETS_SA6:
+    type: Turning Point
+    action: Turning Point
+    alt: 801
+    alt_type: BARO
+    x: -188500
+    y: 12500
+    name: SA6
+  JETS_SA11:
+    type: Turning Point
+    action: Turning Point
+    alt: 689
+    alt_type: BARO
+    x: -181500
+    y: 31500
+    name: SA11
+  JETS_KISWAH:
+    type: Turning Point
+    action: Turning Point
+    alt: 824
+    alt_type: BARO
+    x: -183810
+    y: 25553
+    name: KISWAH
+  JETS_EGRESS:
+    type: Turning Point
+    action: Turning Point
+    alt: 122
+    alt_type: BARO
+    x: -232000
+    y: -25000
+    name: EGRESS
+  JETS_BULLSEYE:
+    type: Turning Point
+    action: Turning Point
+    alt: 938
+    alt_type: BARO
+    x: -210166
+    y: -13463
+    name: BULLSEYE
+  HELOS_MASADA:
+    type: Turning Point
+    action: Turning Point
+    alt: 962
+    alt_type: BARO
+    x: -198055
+    y: -19506
+    name: MASADA
+  HELOS_HADAR:
+    type: Turning Point
+    action: Turning Point
+    alt: 1168
+    alt_type: BARO
+    x: -194401
+    y: -11930
+    name: HADAR
+  HELOS_BEITJINN:
+    type: Turning Point
+    action: Turning Point
+    alt: 1148
+    alt_type: BARO
+    x: -189302
+    y: -7953
+    name: BEITJINN
+  HELOS_SASA:
+    type: Turning Point
+    action: Turning Point
+    alt: 867
+    alt_type: BARO
+    x: -192000
+    y: 7500
+    name: SASA
+  HELOS_KANAKER:
+    type: Turning Point
+    action: Turning Point
+    alt: 804
+    alt_type: BARO
+    x: -196500
+    y: 12500
+    name: KANAKER
+  HELOS_COLONNE:
+    type: Turning Point
+    action: Turning Point
+    alt: 898
+    alt_type: BARO
+    x: -193800
+    y: 3500
+    name: COLONNE
+  HELOS_KHAN:
+    type: Turning Point
+    action: Turning Point
+    alt: 938
+    alt_type: BARO
+    x: -203930
+    y: -7802
+    name: KHAN
+  HELOS_BULLSEYE:
+    type: Turning Point
+    action: Turning Point
+    alt: 938
+    alt_type: BARO
+    x: -210166
+    y: -13463
+    name: BULLSEYE
+settings:
+# USAGE NOTES:
+#
+# 1. Matching: THE MOST SPECIFIC PLAN WINS
+#    - A plan is a candidate when every criterion it states matches; the ones it omits are wildcards.
+#    - Among the candidates, the plan stating the MOST criteria wins. So a plan naming an aircraft type
+#      beats one naming only a coalition and a category, wherever the two are written in this file.
+#    - Declaration order only breaks a tie between two plans of equal specificity, and only then.
+#    - A plan with no criteria at all is the fallback: it matches everything and loses to everything.
+#    - Worked example, from this very file: a blue F-16C matches both `all_blue_planes` and
+#      `f16_flight_plan`, and gets `f16_flight_plan` because it is the more specific of the two. Another
+#      blue plane gets `all_blue_planes`.
+#    - This changed on 2026-08-24. Until then the FIRST compatible plan won, so `f16_flight_plan` above
+#      was unreachable — while this file and the code's own docstring both described the priority that is
+#      now implemented. If you had ordered your plans narrow-first to work around it, nothing changes for
+#      you. See FIX-WAYPOINTS-PLAN-PRIORITY.
+#
+# 2. Targeting:
+#    - Only human-piloted aircraft groups receive waypoints
+#    - Leave a setting with no criteria as a fallback for all units
+#
+# 3. Coordinates:
+#    - X and Y are in mission coordinates (not lat/lon)
+#    - Altitude (alt) is in meters
+#    - Speed is in m/s
+#
+# 4. Waypoint Order:
+#    - Waypoints are injected in the order they appear in the settings
+#    - The first waypoint becomes the initial waypoint
+#
+# 5. A plan takes its waypoints BY KEY:
+#    - Write them as a list of keys, as above.
+#    - The older mapping form (`HOLDING_POINT: "HOLDING_POINT"`) still loads, but only its KEYS are read: the
+#      value is ignored. `POTI: "POTI_LOW"` flies to POTI, not POTI_LOW — the build warns when a value names
+#      another waypoint.
+#
+# 6. Fields:
+#    - type: "Turning Point", "TakeOffGround", "TakeOff", "Landing", etc.
+#    - action: Usually same as type
+#    - alt_type: "BARO" (barometric) or "RADIO" (AGL)
+#    - speed_type: "TAS" (true airspeed) or "IAS" (indicated airspeed)
+#    - ETA fields are optional
+#    - name: what the cockpit shows; the waypoint's key when absent
+  Jets:
+    coalition: blue
+    category: plane
+    waypoints:
+      - JETS_PUSH
+      - JETS_TELLHARA
+      - JETS_KHAN
+      - JETS_COLONNE
+      - JETS_KANAKER
+      - JETS_SASA
+      - JETS_SA6
+      - JETS_SA11
+      - JETS_KISWAH
+      - JETS_EGRESS
+      - JETS_BULLSEYE
+  Helos:
+    coalition: blue
+    category: helicopter
+    waypoints:
+      - HELOS_MASADA
+      - HELOS_HADAR
+      - HELOS_BEITJINN
+      - HELOS_SASA
+      - HELOS_KANAKER
+      - HELOS_COLONNE
+      - HELOS_KHAN
+      - HELOS_BULLSEYE

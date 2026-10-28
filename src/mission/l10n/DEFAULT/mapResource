@@ -1,0 +1,11 @@
+mapResource = 
+{
+  ["MCP_Briefing_objective-artikanaker"] = "briefing-objective-artikanaker.jpg",
+  ["MCP_Briefing_objective-ewrtellhara"] = "briefing-objective-ewrtellhara.jpg",
+  ["MCP_Briefing_objective-khanarnabah"] = "briefing-objective-khanarnabah.jpg",
+  ["MCP_Briefing_objective-kiswah"] = "briefing-objective-kiswah.jpg",
+  ["MCP_Briefing_objective-sa11kiswah"] = "briefing-objective-sa11kiswah.jpg",
+  ["MCP_Briefing_objective-sa6sasa"] = "briefing-objective-sa6sasa.jpg",
+  ["MCP_Briefing_objective-sasa"] = "briefing-objective-sasa.jpg",
+  MCP_Briefing_overview = "briefing-overview.jpg",
+}
