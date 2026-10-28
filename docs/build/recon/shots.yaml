@@ -1,0 +1,82 @@
+operation: Marteau du Golan
+coalition: red
+shots:
+  - name: 01-tellhara
+    title: Radar d'alerte de Tell al-Hara
+    groups: [EWRTellHara]
+    heading: 73
+    pitch: 30
+    slant: 900
+    labels: {"EWRTellHara [r] EWRTellHara-radar": "RADAR 55G6", "EWRTellHara [r] Air Defense": "AAA"}
+  - name: 02-sa6
+    title: Batterie SA-6 de Sa'sa'
+    groups: [SA6Sasa]
+    heading: 47
+    pitch: 30
+    slant: 1000
+    mark: units
+    labels: {"Kub 1S91": "RADAR 1S91", "Kub 2P25": "TEL"}
+  - name: 03-sa11
+    title: Batterie SA-11 de Kiswah
+    groups: [SA11Kiswah]
+    heading: 70
+    pitch: 30
+    slant: 1100
+    mark: units
+    labels: {"SA-11 Buk SR": "RADAR 9S18", "SA-11 Buk CC": "PC", "SA-11 Buk LN": "TEL"}
+  - name: 04-khan-sa15
+    title: "Khan Arnabah : SA-15"
+    groups: ["KhanArnabah [r] SA15"]
+    heading: 43
+    pitch: 30
+    slant: 600
+    labels: {"KhanArnabah": "SA-15"}
+  - name: 05-khan-blindes
+    title: "Khan Arnabah : blindés"
+    groups: ["KhanArnabah [r] Armored Platoon"]
+    heading: 43
+    pitch: 30
+    slant: 1100
+    labels: {"KhanArnabah": "BLINDÉS"}
+  - name: 06-khan-bmp
+    title: "Khan Arnabah : BMP-2"
+    groups: ["KhanArnabah [r] KhanArnabah-bmp"]
+    heading: 43
+    pitch: 30
+    slant: 600
+    labels: {"KhanArnabah": "BMP-2"}
+  - name: 07-khan-aaa
+    title: "Khan Arnabah : AAA"
+    groups: ["KhanArnabah [r] Air Defense"]
+    heading: 43
+    pitch: 30
+    slant: 650
+    labels: {"KhanArnabah": "AAA"}
+  - name: 08-khan-sa13
+    title: "Khan Arnabah : SA-13"
+    groups: ["KhanArnabah [r] SA13"]
+    heading: 43
+    pitch: 30
+    slant: 600
+    labels: {"KhanArnabah": "SA-13"}
+  - name: 09-kanaker
+    title: Artillerie de Kanaker
+    groups: [ArtiKanaker]
+    heading: 107
+    pitch: 30
+    slant: 1000
+    labels: {"ArtiKanaker [r] ArtiKanaker-2s1": "OBUSIERS 2S1", "ArtiKanaker [r] ArtiKanaker-grad": "BM-21", "ArtiKanaker [r] Air Defense": "AAA"}
+  - name: 10-sasa
+    title: Réserve blindée de Sa'sa'
+    groups: ["Sasa [r]"]
+    heading: 100
+    pitch: 52
+    slant: 3400
+    labels: {"Sasa [r] SA19": "SA-19", "Sasa [r] SA8": "SA-8", "Sasa [r] Sasa-bmp": "BMP-2", "Sasa [r] Sasa-t72": "T-72", "Sasa [r] Armored": "BLINDÉS"}
+  - name: 11-kiswah
+    title: PC du 1er Corps à Kiswah
+    groups: ["Kiswah [r]"]
+    heading: 249
+    pitch: 30
+    slant: 900
+    labels: {"Kiswah [r] Kiswah Centre": "CENTRE DE COMMANDEMENT", "Kiswah [r] Kiswah Tour": "TOUR DE TRANSMISSIONS", "Kiswah [r] Kiswah Bunker de conduite": "BUNKER DE CONDUITE DES FEUX", "Kiswah [r] Kiswah Bunker 2": "BUNKER", "Kiswah [r] Air Defense": "AAA"}

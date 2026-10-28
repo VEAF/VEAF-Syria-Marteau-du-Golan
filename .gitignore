@@ -30,3 +30,5 @@ Thumbs.db
 /docs/build/**/__pycache__/
 /docs/maps-hd/
 /build-local-test.log
+/docs/build/recon/raw-v2/
+/docs/build/recon/out-*/

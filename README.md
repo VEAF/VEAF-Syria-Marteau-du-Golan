@@ -72,16 +72,22 @@ python build_deck.py
 
 `steps.py` rend aussi les cartes (`render_maps.py`).
 
-Les photos de reconnaissance se refont avec DCS lancé sur `docs/build/recon/VEAF_Syria_MarteauDuGolan_RECON.miz` (ciel dégagé, 11h30), en caméra libre F11, avec le hook `dcs-fiddle` installé :
+Les photos de reconnaissance se refont avec les commandes `dcs recon-*` de VMCT (à partir de la version qui les livre, VEAF/VEAF-Mission-Creation-Tools#1207), lancées depuis ce dossier.
+Les prises de cette mission (cible, cap d'engagement, inclinaison, distance, étiquettes) sont dans `docs/build/recon/shots.yaml`.
 
-```
-cd docs/build/recon
-python fiddle.py "return 1"
-python shoot_all.py
-python process.py
+```powershell
+.\veaf-tools.exe dcs recon-prepare VEAF_Syria_MarteauDuGolan_20261028.miz --time 11:30
 ```
 
-`shoot_all.py` lit d'abord la position réelle des unités dans `live_units.txt` (relevé par `units.lua`), place la caméra au cap d'engagement de chaque cible (`shots.py`) et capture la fenêtre DCS ; `process.py` en fait des photos de reco (champ de vue calé à 80°).
+Ouvrir ensuite `VEAF_Syria_MarteauDuGolan_20261028_RECON.miz` dans DCS, prendre un slot spectateur, appuyer sur F11, puis :
+
+```powershell
+.\veaf-tools.exe dcs recon-shoot --shots docs\build\recon\shots.yaml
+.\veaf-tools.exe dcs recon-render --shots docs\build\recon\shots.yaml
+```
+
+Les photos et leurs fiches JSON arrivent dans `docs/recon/`, là où le briefing les lit.
+
 Ensuite, recopier les planchettes de `docs/build/kneeboard/` dans `src/mission/KNEEBOARD/IMAGES/` et les cartes dans `src/mission/l10n/DEFAULT/briefing-*.jpg`, puis reconstruire.
 Ne pas relancer l'action MCP `build_mission_briefing` : elle remplacerait les planchettes et les images par celles de l'outil.
 
