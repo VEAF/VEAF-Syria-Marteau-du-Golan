@@ -57,6 +57,13 @@ mission:
 #   password_hashes:              # SHA-1 of the SENIOR_PILOT password (also opens KNOWN_PILOT): .\veaf-tools.exe password-hash
 #     - "<SHA-1 hash>"
 
+# ── Opposition ───────────────────────────────────────────────────────────────
+# Crée le menu radio Opposition et le marqueur _opposition : le Mission Maker règle en vol les QRA
+# marquées scale_with_opposition (niveau 1 à 8 joueurs en CAP, suivi des joueurs, ou « 0 avion »).
+# level 0 : au démarrage, chaque QRA décolle selon le nombre d'avions entrés dans sa zone.
+opposition:
+  level: 0
+
 modules:
   # ── Infrastructure ──
   UNITS:
@@ -78,6 +85,7 @@ modules:
   WEATHER: true
   REMOTE: true
   AIRBASES: true
+  COMBATLOG: true  # every shot, hit and kill to veaf-combat-log-*.jsonl (veaf-tools combat-log)
   # ── Combat ──
   GROUNDAI: true  # ground units AI behaviour (required by CASMISSION)
   CASMISSION: true  # `_cas` marker (no config)
@@ -260,6 +268,7 @@ modules:
               - QRA-Mezzeh-MiG29-2
         delay_before_activating: 900
         react_on_helicopters: false
+        scale_with_opposition: true
       - name: QRA Khalkhalah
         coalition: RED
         trigger_zone: QRA-Khalkhalah
@@ -271,6 +280,7 @@ modules:
               - QRA-Khalkhalah-MiG23-1
         delay_before_activating: 900
         react_on_helicopters: false
+        scale_with_opposition: true
   ASSETS:
     enabled: true
     assets:
@@ -306,6 +316,17 @@ profiles:
       disabled: true
     mission:
       hide_names_from_spawned_groups: false
+  # veaf-tools build --profile TRAINING : version entraînement, sans QRA, SA-6 et SA-11 éteints
+  # au démarrage (le Mission Maker les active), toutes les zones en entraînement.
+  TRAINING:
+    modules:
+      QRA:
+        enabled: false
+      COMBATZONE:
+        zone_edits:
+          "*": { training: true }
+          SA6Sasa: { active_at_start: false }
+          SA11Kiswah: { active_at_start: false }
 cap_missions:
   - group_name: CAP-Alliee-Masada
     menu_name: CAP alliée (2 F-15C, MASADA)
