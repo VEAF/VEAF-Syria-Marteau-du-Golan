@@ -3558,7 +3558,7 @@ Retour : EGRESS (W10) puis Ramat David (jets) et Rosh Pina (hélicos).",
 La brigade alliée tient la ligne côté Golan (Merkava, infanterie, artillerie à Nafakh, Avenger). Un JTAC est posté sur Tel Abu Nada.\
 \
 BULLSEYE : Quneitra (vieille ville).\
-Météo : broken à 3 000 m (9 800 ft), vent du 270 à 18 kt au sol, plus fort en altitude ; visibilité maximale. L'Hermon (2 790 m) culmine juste sous la couche.\
+Météo : broken à 3 000 m (9 800 ft), vent du 270 : 10 kt au sol à Ramat David, 13 kt à Rosh Pina, 17 kt sur le plateau du Golan ; 18 à 20 kt en basse couche (500 à 2 000 ft sol), 16 kt au FL100, 27 kt au-dessus du FL220 ; visibilité maximale. L'Hermon (2 790 m) culmine juste sous la couche.\
 \
 Menace aérienne : QRA de MiG-29S à Mezzeh et de MiG-23MLD à Khalkhalah, en alerte à H+15 min ; elles décollent dès qu'un avion allié entre dans leur zone. Elles ne réagissent pas aux hélicoptères.",
   drawings = {
@@ -4083,7 +4083,7 @@ Menace aérienne : QRA de MiG-29S à Mezzeh et de MiG-23MLD à Khalkhalah, en al
     wind = {
       at2000 = {
         dir = 90,
-        speed = 11.0,
+        speed = 8.0,
       },
       at8000 = {
         dir = 90,
@@ -4091,7 +4091,7 @@ Menace aérienne : QRA de MiG-29S à Mezzeh et de MiG-23MLD à Khalkhalah, en al
       },
       atGround = {
         dir = 90,
-        speed = 9,
+        speed = 5,
       },
     },
   },

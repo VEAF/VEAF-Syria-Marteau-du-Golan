@@ -12,7 +12,7 @@ La coalition a un mandat clair et une seule soirée pour le remplir : **briser s
 Et quand le front sera dégarni, la brigade alliée passera la ligne. Si on a bien fait le ménage.
 
 **Infos pratiques**
-• Syria, après-midi, nuages fragmentés à 9 800 ft, vent d'ouest soutenu
+• Syria, après-midi, nuages fragmentés à 9 800 ft, vent d'ouest modéré
 • Opposition de haut niveau, défense sol-air en réseau
 • Slots dynamiques : jets à Ramat David, hélicos à Rosh Pina
 • 6 à 12 pilotes, environ 2 h de vol
