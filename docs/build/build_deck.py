@@ -56,7 +56,7 @@ S.append(Slide("Situation générale", [Text(0.6, 1.15, 12.1, 6.2, [
     RP("Bullseye :", "Quneitra, la vieille ville (point BULLSEYE de chaque plan de vol).", 15, 10),
     RP("Départ :", "slots dynamiques, au parking. Jets à Ramat David, hélicoptères à Rosh Pina (12 places).", 15, 10),
     RP("Menace :", "SA-11 à Kiswah, SA-6 à Sa'sa', radar d'alerte à Tell al-Hara, en réseau. Au front et en profondeur : SA-15, SA-13, SA-8, SA-19, AAA. En l'air : QRA de MiG-29S à Mezzeh et de MiG-23MLD à Khalkhalah.", 15, 10),
-    RP("Météo :", "nuages fragmentés (broken) à 3 000 m (9 800 ft), qui couvrent environ 70 % du ciel ; l'Hermon (2 790 m) culmine juste dessous. Vent du 270 à 17 kt au sol, plus fort en altitude. Visibilité maximale, 18 °C.", 15, 10),
+    RP("Météo :", "nuages fragmentés (broken) à 3 000 m (9 800 ft), qui couvrent environ 70 % du ciel ; l'Hermon (2 790 m) culmine juste dessous. Vent du 270 : 10 kt au sol à Ramat David, 13 kt à Rosh Pina, 17 kt sur le plateau du Golan ; 18 à 20 kt en basse couche (500 à 2 000 ft sol), 16 kt au FL100, 27 kt au-dessus du FL220. Visibilité maximale, 18 °C.", 15, 10),
     RP("Horaire :", "16 avril, 15h00 locale ; attaque vers 15h30, retour avant la nuit.", 15, 0),
 ])]))
 

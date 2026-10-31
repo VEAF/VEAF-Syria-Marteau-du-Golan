@@ -11,7 +11,7 @@ Une fois le front dégarni, le Mission Maker lance la poussée de la brigade all
 | | |
 |---|---|
 | Date, heure | 16 avril 2024, 15h00 locale |
-| Météo | Broken à 3 000 m, vent du 270 à 17 kt au sol, visibilité maximale |
+| Météo | Broken à 3 000 m, vent du 270 : 10 à 17 kt au sol selon le terrain, 18 à 20 kt en basse couche, 27 kt au-dessus du FL220 ; visibilité maximale |
 | Départs | Slots dynamiques : Ramat David (jets), Rosh Pina (hélicos, 12 places) |
 | Bullseye | Quneitra (vieille ville) |
 | Soutien | Magic (E-3A) 282.2 ; Texaco-1 (KC-135MPRS, panier) 290.1 / 60Y FL180 ; Arco-1 (KC-135, perche) 290.5 / 64Y FL220 |
@@ -93,6 +93,7 @@ Ne pas relancer l'action MCP `build_mission_briefing` : elle remplacerait les pl
 
 ## Limites connues
 
+- Le vent annoncé au briefing est mesuré dans DCS (`atmosphere.getWind` via le dcs-bridge), pas recopié des réglages de la mission : DCS renforce le vent sol jusqu'à environ le double entre 100 et 600 m de hauteur. Toute retouche de la météo demande de refaire la mesure.
 - Syria n'a pas de catalogue de terrain dégagé : aucun véhicule n'a été vérifié hors des arbres et des bâtiments. Contrôle possible : `veaf-tools dcs clear-ground-check <mission.miz>` (demande DCS).
 - La prise en charge du groupement `Poussee` par GroundAI n'est pas vérifiée : à observer au premier test.
 - Le verrou Mission Master de la poussée n'est pas mesuré : sans hash `password_mm_hashes`, les pilotes connus du serveur VEAF peuvent probablement la déclencher.
