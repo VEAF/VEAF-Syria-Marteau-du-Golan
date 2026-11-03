@@ -344,8 +344,8 @@ training:
       kind: qra
     - zone: SA11Kiswah          # le SAM longue portée de la soirée
       kind: sam_lr
-    - zone: SA6Sasa             # objectif SEAD : « PORTE OUVERTE »
-      kind: sam_threat
+    - zone: SA6Sasa             # objectif SEAD : « PORTE OUVERTE », détruit par la SEAD avant l'A2G
+      kind: sam_lr              # sam_lr : retiré en A2G seulement, gardé en CAP, SEAD et commune
     - zone: EWRTellHara         # objectif SEAD : le radar d'alerte
       kind: sam_threat
     - zone: KhanArnabah
