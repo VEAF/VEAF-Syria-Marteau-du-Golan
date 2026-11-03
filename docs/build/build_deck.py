@@ -39,7 +39,7 @@ S.append(Slide(items=[
     Text(8.7, 1.5, 4.3, 4.6, [P("Sommaire", 20, True, after=12)] + [P(t, 16, after=8) for t in (
         "Situation stratégique", "Situation générale", "ATO", "Situation tactique", "Objectifs et cibles",
         "Déroulement de la mission", "Plan de vol, étape par étape", "Déploiement et coordination",
-        "Plan de fréquences")]),
+        "Plan de fréquences", "Versions d'entraînement")]),
 ]))
 
 # 2 — Situation stratégique
@@ -213,6 +213,16 @@ S.append(Slide("Plan de fréquences", [
         P("FM", 18, True, after=10), P("JTAC Abu Nada : 35.550 MHz", 15, after=14),
         P("Les canaux sont préréglés dans chaque appareil ; la numérotation exacte dépend des radios de l'appareil (voir la planchette des fréquences).", 12, color=GREY, italic=True)]),
 ]))
+
+# Versions d'entraînement : une page par version, contenu généré par VMCT dans training.py
+from training import TRAINING  # noqa: E402
+
+for page in TRAINING:
+    rows = [page["columns"], *page["rows"]]
+    S.append(Slide(page["title"], [
+        Table(0.5, 1.05, [6.4, 2.2, 3.7], rows, size=10.5, row_h=0.34),
+        Text(0.5, 1.05 + 0.34 * len(rows) + 0.2, 12.3, 1.3, [P(note, 12, after=4) for note in page["notes"]]),
+    ]))
 
 to_pptx(S, DOCS / "briefing.pptx")
 try:

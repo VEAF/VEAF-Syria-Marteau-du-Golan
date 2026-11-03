@@ -360,6 +360,7 @@ training:
       kind: a2g_target
     - groups: [KhanArnabah-aaa, KhanArnabah-sa13, KhanArnabah-sa15, Sasa-sa8, Sasa-sa19]
       kind: sam_threat          # « une Shilka, un SA-13 et un SA-15 », « un SA-8 et un SA-19 » : précisés au briefing
+      label: "Défense rapprochée de Khan Arnabah et de Sa'sa' (Shilka, SA-13, SA-15, SA-8, SA-19)"
   randomize:
     - name: khan-blindes        # « des chars et des BMP-2 retranchés » : sans nombre
       replaces: [KhanArnabah-armor-*, KhanArnabah-bmp]
@@ -370,6 +371,7 @@ training:
         - units: [{type: BMP-2, count: 2}]
       count: 2-3
       radius: 0-400
+      label: Chars et BMP-2 de Khan Arnabah
     - name: sasa-blindes        # « des T-72 et des BMP-2 en attente » : sans nombre
       replaces: [Sasa-t72, Sasa-bmp, Sasa-armor-1]
       pool:
@@ -379,3 +381,4 @@ training:
         - command: -armor
       count: 2-3
       radius: 200-1500
+      label: T-72 et BMP-2 de Sa'sa'

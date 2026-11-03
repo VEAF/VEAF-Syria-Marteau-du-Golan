@@ -1,0 +1,88 @@
+"""Les pages d'entraînement du briefing, une par version.
+
+Généré depuis le bloc training: de mission.yaml par VMCT (mission_briefing.briefing_training, FEAT-TRAINING-BRIEFING-PAGES) :
+à régénérer, pas à retoucher, quand le bloc change.
+"""
+
+TRAINING = [
+    {
+        "title": 'Entraînement — A2G',
+        "columns": ['Élément', "Ce que c'est", 'Dans cette version'],
+        "rows": [
+            ['QRA Mezzeh', 'QRA', 'Retiré'],
+            ['QRA Khalkhalah', 'QRA', 'Retiré'],
+            ['Batterie SA-11 de Kiswah', 'SAM longue portée', 'Retiré'],
+            ["Batterie SA-6 de Sa'sa'", 'SAM, objectif SEAD', 'Gardé'],
+            ["Radar d'alerte de Tell al-Hara", 'SAM, objectif SEAD', 'Gardé'],
+            ['Front de Khan Arnabah', 'Cible au sol', 'Gardé'],
+            ["Réserve blindée de Sa'sa'", 'Cible au sol', 'Gardé'],
+            ['PC du 1er Corps à Kiswah', 'Cible au sol', 'Gardé'],
+            ['Artillerie de Kanaker', 'Cible au sol', 'Gardé'],
+            ['Contre-attaque syrienne', 'Cible au sol', 'Gardé'],
+            ["Défense rapprochée de Khan Arnabah et de Sa'sa' (Shilka, SA-13, SA-15, SA-8, SA-19)", 'SAM, objectif SEAD', 'Gardé'],
+            ['Chars et BMP-2 de Khan Arnabah : 2 à 3 parmi 4', 'Vague au briefing', 'Tiré au sort à chaque lancement'],
+            ["T-72 et BMP-2 de Sa'sa' : 2 à 3 parmi 4", 'Vague au briefing', 'Tiré au sort à chaque lancement'],
+        ],
+        "notes": ['Pour les vols air-sol, comme si la CAP et la SEAD avaient fait leur travail : ni chasse ennemie, ni QRA, ni SAM longue portée.', 'Sur le serveur : la mission dont le nom contient TRAINING_A2G. Même cadre et même briefing que la soirée ; ce que le briefing laisse vague change à chaque lancement.'],
+    },
+    {
+        "title": 'Entraînement — CAP',
+        "columns": ['Élément', "Ce que c'est", 'Dans cette version'],
+        "rows": [
+            ['QRA Mezzeh', 'QRA', 'Gardé'],
+            ['QRA Khalkhalah', 'QRA', 'Gardé'],
+            ['Batterie SA-11 de Kiswah', 'SAM longue portée', 'Gardé'],
+            ["Batterie SA-6 de Sa'sa'", 'SAM, objectif SEAD', 'Gardé'],
+            ["Radar d'alerte de Tell al-Hara", 'SAM, objectif SEAD', 'Gardé'],
+            ['Front de Khan Arnabah', 'Cible au sol', 'Cibles retirées, défenses aériennes gardées'],
+            ["Réserve blindée de Sa'sa'", 'Cible au sol', 'Cibles retirées, défenses aériennes gardées'],
+            ['PC du 1er Corps à Kiswah', 'Cible au sol', 'Cibles retirées, défenses aériennes gardées'],
+            ['Artillerie de Kanaker', 'Cible au sol', 'Cibles retirées, défenses aériennes gardées'],
+            ['Contre-attaque syrienne', 'Cible au sol', 'Retiré'],
+            ["Défense rapprochée de Khan Arnabah et de Sa'sa' (Shilka, SA-13, SA-15, SA-8, SA-19)", 'SAM, objectif SEAD', 'Gardé'],
+            ['Chars et BMP-2 de Khan Arnabah : 2 à 3 parmi 4', 'Vague au briefing', 'Retiré avec les cibles'],
+            ["T-72 et BMP-2 de Sa'sa' : 2 à 3 parmi 4", 'Vague au briefing', 'Retiré avec les cibles'],
+        ],
+        "notes": ["Pour les vols air-air, comme si les avions d'attaque avaient fait leur travail : plus aucune cible au sol, toutes les défenses aériennes en place, la QRA armée dès le départ.", 'Sur le serveur : la mission dont le nom contient TRAINING_CAP. Même cadre et même briefing que la soirée ; ce que le briefing laisse vague change à chaque lancement.'],
+    },
+    {
+        "title": 'Entraînement — SEAD',
+        "columns": ['Élément', "Ce que c'est", 'Dans cette version'],
+        "rows": [
+            ['QRA Mezzeh', 'QRA', 'Retiré'],
+            ['QRA Khalkhalah', 'QRA', 'Retiré'],
+            ['Batterie SA-11 de Kiswah', 'SAM longue portée', 'Gardé'],
+            ["Batterie SA-6 de Sa'sa'", 'SAM, objectif SEAD', 'Gardé'],
+            ["Radar d'alerte de Tell al-Hara", 'SAM, objectif SEAD', 'Gardé'],
+            ['Front de Khan Arnabah', 'Cible au sol', 'Retiré'],
+            ["Réserve blindée de Sa'sa'", 'Cible au sol', 'Retiré'],
+            ['PC du 1er Corps à Kiswah', 'Cible au sol', 'Retiré'],
+            ['Artillerie de Kanaker', 'Cible au sol', 'Retiré'],
+            ['Contre-attaque syrienne', 'Cible au sol', 'Retiré'],
+            ["Défense rapprochée de Khan Arnabah et de Sa'sa' (Shilka, SA-13, SA-15, SA-8, SA-19)", 'SAM, objectif SEAD', 'Gardé'],
+            ['Chars et BMP-2 de Khan Arnabah : 2 à 3 parmi 4', 'Vague au briefing', 'Retiré avec les cibles'],
+            ["T-72 et BMP-2 de Sa'sa' : 2 à 3 parmi 4", 'Vague au briefing', 'Retiré avec les cibles'],
+        ],
+        "notes": ["Pour les vols SEAD, comme si la CAP et les avions d'attaque avaient fait leur travail : ni chasse ennemie, ni QRA, ni cible au sol ; les SAM annoncés sont tous là.", 'Sur le serveur : la mission dont le nom contient TRAINING_SEAD. Même cadre et même briefing que la soirée ; ce que le briefing laisse vague change à chaque lancement.'],
+    },
+    {
+        "title": 'Entraînement — commun',
+        "columns": ['Élément', "Ce que c'est", 'Dans cette version'],
+        "rows": [
+            ['QRA Mezzeh', 'QRA', 'Gardé'],
+            ['QRA Khalkhalah', 'QRA', 'Gardé'],
+            ['Batterie SA-11 de Kiswah', 'SAM longue portée', 'Gardé'],
+            ["Batterie SA-6 de Sa'sa'", 'SAM, objectif SEAD', 'Gardé'],
+            ["Radar d'alerte de Tell al-Hara", 'SAM, objectif SEAD', 'Gardé'],
+            ['Front de Khan Arnabah', 'Cible au sol', 'Gardé'],
+            ["Réserve blindée de Sa'sa'", 'Cible au sol', 'Gardé'],
+            ['PC du 1er Corps à Kiswah', 'Cible au sol', 'Gardé'],
+            ['Artillerie de Kanaker', 'Cible au sol', 'Gardé'],
+            ['Contre-attaque syrienne', 'Cible au sol', 'Gardé'],
+            ["Défense rapprochée de Khan Arnabah et de Sa'sa' (Shilka, SA-13, SA-15, SA-8, SA-19)", 'SAM, objectif SEAD', 'Gardé'],
+            ['Chars et BMP-2 de Khan Arnabah : 2 à 3 parmi 4', 'Vague au briefing', 'Tiré au sort à chaque lancement'],
+            ["T-72 et BMP-2 de Sa'sa' : 2 à 3 parmi 4", 'Vague au briefing', 'Tiré au sort à chaque lancement'],
+        ],
+        "notes": ["Toute la mission, pour s'entraîner ensemble : rien n'est retiré.", 'Sur le serveur : la mission dont le nom contient TRAINING_ALL. Même cadre et même briefing que la soirée ; ce que le briefing laisse vague change à chaque lancement.'],
+    },
+]
