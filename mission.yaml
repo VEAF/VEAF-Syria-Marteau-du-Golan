@@ -331,3 +331,51 @@ cap_missions:
   - group_name: CAP-Alliee-Masada
     menu_name: CAP alliée (2 F-15C, MASADA)
     briefing: "Deux F-15C alliés en patrouille au FL250 au-dessus de MASADA, hors de portée du SA-11 : ils engagent les avions ennemis qui approchent."
+
+# ── Versions d'entraînement par rôle ─────────────────────────────────────────
+# Le build écrit aussi <mission>_TRAINING_A2G / _CAP / _SEAD / _ALL.miz : même cadre et même
+# briefing, le travail des autres rôles fait, le vague du briefing tiré à chaque lancement.
+# Doc : doc/mission-maker/TRAINING_VERSIONS.md du dépôt VEAF-Mission-Creation-Tools
+training:
+  elements:
+    - qra: QRA Mezzeh
+      kind: qra
+    - qra: QRA Khalkhalah
+      kind: qra
+    - zone: SA11Kiswah          # le SAM longue portée de la soirée
+      kind: sam_lr
+    - zone: SA6Sasa             # objectif SEAD : « PORTE OUVERTE »
+      kind: sam_threat
+    - zone: EWRTellHara         # objectif SEAD : le radar d'alerte
+      kind: sam_threat
+    - zone: KhanArnabah
+      kind: a2g_target
+    - zone: Sasa
+      kind: a2g_target
+    - zone: Kiswah
+      kind: a2g_target
+    - zone: ArtiKanaker
+      kind: a2g_target
+    - zone: ContreAttaque
+      kind: a2g_target
+    - groups: [KhanArnabah-aaa, KhanArnabah-sa13, KhanArnabah-sa15, Sasa-sa8, Sasa-sa19]
+      kind: sam_threat          # « une Shilka, un SA-13 et un SA-15 », « un SA-8 et un SA-19 » : précisés au briefing
+  randomize:
+    - name: khan-blindes        # « des chars et des BMP-2 retranchés » : sans nombre
+      replaces: [KhanArnabah-armor-*, KhanArnabah-bmp]
+      pool:
+        - group: KhanArnabah-armor-1
+        - group: KhanArnabah-armor-2
+        - group: KhanArnabah-bmp
+        - units: [{type: BMP-2, count: 2}]
+      count: 2-3
+      radius: 0-400
+    - name: sasa-blindes        # « des T-72 et des BMP-2 en attente » : sans nombre
+      replaces: [Sasa-t72, Sasa-bmp, Sasa-armor-1]
+      pool:
+        - group: Sasa-t72
+        - group: Sasa-bmp
+        - group: Sasa-armor-1
+        - command: -armor
+      count: 2-3
+      radius: 200-1500
